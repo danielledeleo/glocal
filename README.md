@@ -1,2 +1,2 @@
-# glocal
-An intro to networking project. Carleton University
+# Glocal
+An intro to networking project. Carleton University, MIT License. 
