@@ -16,15 +16,13 @@ func main() {
 
 	api := router.PathPrefix("/api/v1").Subrouter()
 
-	api.HandleFunc("/text", APIHandler)
+	api.HandleFunc("/text", func(rw http.ResponseWriter, req *http.Request) {
+		fmt.Println(req.URL.String(), req.RemoteAddr)
+
+		io.WriteString(rw, "sup\n")
+	})
 
 	fmt.Println("Starting server on :19000")
 	http.ListenAndServe(":19000", router)
 
-}
-
-func APIHandler(rw http.ResponseWriter, req *http.Request) {
-	fmt.Println(req.URL.String(), req.RemoteAddr)
-
-	io.WriteString(rw, "sup\n")
 }
