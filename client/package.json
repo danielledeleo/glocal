@@ -1,0 +1,19 @@
+{
+  "name": "glocal",
+  "version": "0.0.1",
+  "description": "client frontend",
+  "main": "main.js",
+  "scripts": {
+    "test": "start"
+  },
+  "respository": {
+    "type": "git",
+    "url": "git://github.com/jagger27/glocal.git"
+  },
+  "author": "Brandon Keyes",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "electron-prebuilt": "^0.35.2",
+    "jquery": "^2.1.4"
+  }
+}

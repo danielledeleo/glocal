@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>G-Thang</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="./css/client.css" />
+  </head>
+  <body>
+    <div class="container">
+      
+      <!-- Client Options (mute, toggle status, etc) -->
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default" aria-label="Status"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></button>
+            <button type="button" class="btn btn-default" aria-label="Toggle Mic"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span></button>
+            <button type="button" class="btn btn-default" aria-label="Toggle Speakers"><span class="glyphicon glyphicon-headphones" aria-hidden="true"></span></button>
+            <button type="button" class="btn btn-default" aria-label="Contacts"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Client List and Details Pane -->
+      <div class="row">
+        <div class="col-xs-4">
+          <ul class="list-group">
+            <li class="list-group-item">Cliant A</li>
+            <li class="list-group-item">Clyent B</li>
+            <li class="list-group-item">Clyant C</li>
+            <li class="list-group-item">Cliint D</li>
+            <li class="list-group-item">Clint E</li>
+          </ul>
+        </div>
+        <div class="col-xs-8">
+          <p><strong>Nickname: TheDude</strong></p>
+          <p><strong>Version: </strong> 3.0.18.2</p>
+          <p><strong>Online since: </strong>Who knows</p>
+          <p><strong>Server Groups: </strong>Guest</p>
+          <p><strong>Channel Groups: </strong>Guest</p>
+        </div>
+      </div>
+      
+      <!-- Messages Pane -->
+      <div class="row">
+        <div class="col-md-12">
+          <p>(03:09:21) <strong>TheDude</strong> was kicked from the server.</p>
+          <p>(03:10:15) Savagery.</p>
+          <p>(03:12:67) Words.</p>
+          <p>(03:15:00) Some more (for good measure).</p>
+        </div>
+      </div>
+      
+      <!-- Client Chat Form -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group"><textarea class="form-control" rows="1" id="comment"></textarea></div>
+        </div>
+      </div>
+      
+    </div>
+    <script>global.jQuery = require('jquery');</script>
+    <script src="./javascript/bootstrap.min.js"></script>
+    <script src="./client.js"></script>
+  </body>
+</html>
