@@ -9,16 +9,16 @@
     <link rel="stylesheet" href="./css/client.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       
       <!-- Client Options (mute, toggle status, etc) -->
       <div class="row">
         <div class="col-xs-12">
-          <div class="btn-group">
-            <button type="button" class="btn btn-default" aria-label="Status"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></button>
-            <button type="button" class="btn btn-default" aria-label="Toggle Mic"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span></button>
-            <button type="button" class="btn btn-default" aria-label="Toggle Speakers"><span class="glyphicon glyphicon-headphones" aria-hidden="true"></span></button>
-            <button type="button" class="btn btn-default" aria-label="Contacts"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button>
+          <div class="btn-group options-view" id="btn-group-options">
+            <button type="button" class="btn btn-default" aria-label="Status" id="status"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></button>
+            <button type="button" class="btn btn-default" data-toggle="button" aria-label="Toggle Mic" id="mic"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span></button>
+            <button type="button" class="btn btn-default" data-toggle="button" aria-label="Toggle Speakers" id="speakers"><span class="glyphicon glyphicon-headphones" aria-hidden="true"></span></button>
+            <button type="button" class="btn btn-default" aria-label="Contacts" id="contacts"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button>
           </div>
         </div>
       </div>
