@@ -1,3 +1,17 @@
 .btn-group.options-view {
   margin-top: 5px;
 }
+
+.list-group.client-view {
+  margin-top: 5px;
+}
+
+.list-group.client-view > li {
+  padding: 2px;
+}
+
+.list-group.client-view > li > a {
+  color: black;
+  text-decoration: none;
+}
+
