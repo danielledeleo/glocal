@@ -39,8 +39,15 @@
       
       <!-- Message Pane -->
       <div class="row">
-        <div class="col-md-12" id="message-column">
-          <div class="well well-sm" id="message-pane"></div>
+        <div class="col-md-12">
+          <ul class="nav nav-tabs" id="message-nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#all-tab">All</a></li>
+          </ul>
+          <div class="tab-content" id="message-nav-panes">
+            <div class="tab-pane active" id="all-tab">
+              <div class="well well-sm" id="message-pane"></div>
+            </div>
+          </div>
         </div>
       </div>
       

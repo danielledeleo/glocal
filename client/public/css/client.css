@@ -11,9 +11,10 @@
 }
 
 .well#message-pane {
-  min-height: 50px;
+  min-height: 200px;
   max-height: 200px;
   overflow-y: scroll;
+  border-top-left-radius: 0px;
 }
 
 a#user {

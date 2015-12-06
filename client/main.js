@@ -1,6 +1,8 @@
 /* Main.js for MythDB */
 var app           = require('app');
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
+var Menu = require('menu');
+var MenuItem = require('menu-item');
 
 // Report crashes to our server.
 require('crash-reporter').start();
@@ -38,6 +40,5 @@ app.on('ready', function() {
 		mainWindow = null;
 	});
 });
-
 
 

@@ -31,7 +31,7 @@ $(document).ready(function() {
       getMessage('TheDude', $(this).val());
       $(this).val('');
     }
-});
+  });
 });
 
 function handleMessagePane() {
@@ -40,10 +40,27 @@ function handleMessagePane() {
 }
 
 function getMessage(user, msg) {
-  var messagePane = $('.well#message-pane');
+  var messagePane = $('.active > .well#message-pane');
   messagePane.append('<p><strong><a href="#user" id="user">' + user + '</a>:</strong> ' + msg + '</p>');
   var paneHeight = messagePane.prop('scrollHeight');
   messagePane.scrollTop(paneHeight);
+}
+
+function messageUser(username) {
+  // check if tab already exists
+  var theTab = $('a[href$="#' + username + '-tab"]');
+  if(theTab.length) {
+    theTab.tab('show');
+    return;
+  }
+  
+  var newTab = $('.nav#message-nav-tabs');
+  newTab.append('<li><a data-toggle="tab" href="#' + username + '-tab">' + username + '</a></li>');
+  
+  var newPane = $('.tab-content#message-nav-panes');
+  newPane.append('<div class="tab-pane" id="' + username + '-tab"><div class="well well-sm" id="message-pane"></div></div>');
+  
+  $('.nav-tabs a[href$="#' + username + '-tab"]').tab('show');
 }
 
 function loadClientList() {
@@ -71,7 +88,7 @@ function getClientList(requestedList) {
 // message user, voice chat, etc
 function handleUserContextMenu(username, event) {
   var menu = new Menu();
-  menu.append(new MenuItem({ label: 'Send Message', click: function() { console.log('Messaging ' + username + '.'); }}));
+  menu.append(new MenuItem({ label: 'Send Message', click: function() { messageUser(username); console.log('Messaging ' + username + '.'); }}));
   menu.append(new MenuItem({ label: 'Call', click: function() { console.log('Calling ' + username + '.'); }}));
   menu.append(new MenuItem({ label: 'Poke', click: function() { console.log('Poking ' + username + '.'); }}));
   event.preventDefault();
