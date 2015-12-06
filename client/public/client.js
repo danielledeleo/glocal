@@ -1,6 +1,6 @@
-//var remote = require('electron').remote;
-//var Menu = remote.Menu;
-//var MenuItem = remote.MenuItem;
+var remote = require('electron').remote;
+var Menu = remote.Menu;
+var MenuItem = remote.MenuItem;
 var $ = global.jQuery;
 
 $(document).ready(function() {
@@ -33,8 +33,10 @@ function loadClientList() {
   for(i = 0; i < clientList.length; ++i) {
     $('ul#client-list').append('<li class="list-group-item"><a href="#user" id="user">' + clientList[i] + '</a></li>');
   }
-  $('body').on('contextmenu', '#user', function() {
-    console.log('Right clicked: ' + $(this).text() + '.');
+  $('body').on('contextmenu', '#user', function(event) {
+    var username = $(this).text();
+    console.log('Right clicked: ' + username + '.');
+    handleUserContextMenu(username, event);
   });
 }
 
@@ -47,11 +49,12 @@ function getClientList(requestedList) {
   requestedList.push('Creed');
 }
 
-/* For context-sensitive actions
-var menu = new Menu();
-menu.append(new MenuItem({ label: 'Connections', click: function() { console.log('Connections clicked.'); }}));
-window.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
+// message user, voice chat, etc
+function handleUserContextMenu(username, event) {
+  var menu = new Menu();
+  menu.append(new MenuItem({ label: 'Send Message', click: function() { console.log('Messaging ' + username + '.'); }}));
+  menu.append(new MenuItem({ label: 'Call', click: function() { console.log('Calling ' + username + '.'); }}));
+  menu.append(new MenuItem({ label: 'Poke', click: function() { console.log('Poking ' + username + '.'); }}));
+  event.preventDefault();
   menu.popup(remote.getCurrentWindow());
-}, false);
-*/
+}
