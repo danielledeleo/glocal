@@ -7,6 +7,7 @@ $(document).ready(function() {
   
   // Initial setup
   loadClientList();
+  handleMessagePane();
   
   // Event Handlers
   $('button#status').click(function() {
@@ -25,7 +26,22 @@ $(document).ready(function() {
     console.log('Get contacts.');
     $(this).blur();
   });
+  $('.form-control#comment').on('keyup', function(e) {
+    if (e.which == 13 && ! e.shiftKey) {
+      getMessage('TheDude', $(this).val());
+      $(this).val('');
+    }
 });
+});
+
+function handleMessagePane() {
+  getMessage('Jim', 'Hey, testing message well.');
+  getMessage('Dwight', 'Okay, np.');
+}
+
+function getMessage(user, msg) {
+  $('.well#message-pane').append('<p><a href="#user" id="user">' + user + ': </a>' + msg + '</p>');
+}
 
 function loadClientList() {
   var clientList = [];
