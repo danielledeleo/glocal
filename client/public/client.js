@@ -40,10 +40,10 @@ function handleMessagePane() {
 }
 
 function getMessage(user, msg) {
-  $('.well#message-pane').append('<p><strong><a href="#user" id="user">' + user + '</a>:</strong> ' + msg + '</p>');
-  var messageColumn = $('div#message-column');
-  var paneHeight = messageColumn.prop('scrollHeight');
-  messageColumn.scrollTop(paneHeight);
+  var messagePane = $('.well#message-pane');
+  messagePane.append('<p><strong><a href="#user" id="user">' + user + '</a>:</strong> ' + msg + '</p>');
+  var paneHeight = messagePane.prop('scrollHeight');
+  messagePane.scrollTop(paneHeight);
 }
 
 function loadClientList() {

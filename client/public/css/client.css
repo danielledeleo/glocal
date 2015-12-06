@@ -10,12 +10,10 @@
   padding: 2px;
 }
 
-div#message-column {
-  height: 100%;
+.well#message-pane {
   min-height: 50px;
   max-height: 200px;
   overflow-y: scroll;
-  margin-bottom: 5px;
 }
 
 a#user {
