@@ -106,6 +106,7 @@ function initAppMenu() {
           label: 'Connect',
           accelerator: 'CmdOrCtrl+Shift+C',
           click: function() {
+            $('#connectModal').modal('show');
             console.log('Connect to a server.');
           }
         },
