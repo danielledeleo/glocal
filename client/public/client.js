@@ -56,7 +56,12 @@ function messageUser(username) {
   }
   
   var newTab = $('.nav#message-nav-tabs');
-  newTab.append('<li><a data-toggle="tab" href="#' + username + '-tab">' + username + '</a></li>');
+  newTab.append('<li id="' + username + '-navtab"><a data-toggle="tab" href="#' + username + '-tab">' + username + '</a></li>');
+  
+  $('body').on('contextmenu', '#' + username + '-navtab', function(event) {
+    console.log('Right clicked: ' + username + '.');
+    handleUserTabContextMenu(username, event);
+  });
   
   var newPane = $('.tab-content#message-nav-panes');
   newPane.append('<div class="tab-pane" id="' + username + '-tab"><div class="well well-sm" id="message-pane"></div></div>');
@@ -84,6 +89,19 @@ function getClientList(requestedList) {
   requestedList.push('Dwight');
   requestedList.push('Toby');
   requestedList.push('Creed');
+}
+
+function handleUserTabContextMenu(username, event) {
+  var menu = new Menu();
+  menu.append(new MenuItem({ label: 'Close', click: function() { closeMessageTab(username); console.log('Closing ' + username + '\'s tab.'); }}));
+  event.preventDefault();
+  menu.popup(remote.getCurrentWindow());
+}
+
+function closeMessageTab(username) {
+  $('#' + username + '-navtab').remove();
+  $('#' + username + '-tab').remove();
+  $('a[href$="#all-tab"]').tab('show');
 }
 
 // message user, voice chat, etc
